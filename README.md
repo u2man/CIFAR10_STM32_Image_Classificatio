@@ -15,4 +15,5 @@ Demo video
 https://youtu.be/WcCLhHORZiY
 
 Article (In Indonesian)
+https://karedox.com/?p=271
 

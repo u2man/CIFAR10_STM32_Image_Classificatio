@@ -72,7 +72,7 @@ void MX_USB_HOST_Process(void);
 /* USER CODE BEGIN PFP */
 static void LCD_Config(void);
 static uint8_t Jpeg_CallbackFunction( uint32_t DataLength);
-void Display_File_JPG_uSD(void);
+void Display_File_JPG(void);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -149,7 +149,7 @@ int main(void)
   switch(Appli_state){
   case APPLICATION_READY:
   	printf("Open file\r\n");
-      Display_File_JPG_uSD();
+      Display_File_JPG();
       //Appli_state = APPLICATION_IDLE;
   	break;
   case APPLICATION_IDLE:
@@ -310,7 +310,7 @@ static uint8_t Jpeg_CallbackFunction( uint32_t DataLength)
   return 0;
 }
 
-void Display_File_JPG_uSD(void){
+void Display_File_JPG(void){
 	FRESULT res;
 	int i,x=10;
 

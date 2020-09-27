@@ -10,3 +10,9 @@ The program will open the folder "media" then read the jpeg files, decode it and
 The AI output, in 32 bit float, then will sort the highest value and will display to LCD if the value >10%. This value is the prediction of the object.
 
 As a result, the program can detect/recognize the object from the image with confidence value >50%.
+
+Demo video
+https://youtu.be/WcCLhHORZiY
+
+Article (In Indonesian)
+

@@ -159,29 +159,19 @@ void jpeg_decode(uint8_t *filename, uint32_t width, uint8_t (*callback)( uint32_
 	  //BSP_LCD_Debug((uint8_t*)"init cinfo");
 	  jpeg_create_decompress(&cinfo);
 
-    jpeg_stdio_src (&cinfo, &file);
+      jpeg_stdio_src (&cinfo, &file);
 
 	  /* Step 3: read image parameters with jpeg_read_header() */
-    jpeg_read_header(&cinfo, TRUE);
+      jpeg_read_header(&cinfo, TRUE);
 
 	  /* Step 4: set parameters for decompression */
 	  cinfo.dct_method = JDCT_IFAST;
-
-	  /* Step 5: start decompressor */
-	  if((cinfo.image_width>320)&&(cinfo.image_width<320*3)){
-	   cinfo.scale_num =(uint16_t) (cinfo.image_width/320);
-	   cinfo.scale_denom =(uint16_t)(cinfo.image_width/320)*2;
-	  }
-	  if(cinfo.image_width>=320*3){
-		  cinfo.scale_num=1;
-		  cinfo.scale_denom=8;
-	  }
-
 	  cinfo.scale_num=1;
 	  cinfo.scale_denom=2;
 
-
+	  /* Step 5: start decompressor */
 	  jpeg_start_decompress(&cinfo);
+
 	  //printf("image size %d x %d\r\n",cinfo.image_width, cinfo.image_height);
 	  printf("outpur %d x %d\r\n",cinfo.output_width, cinfo.output_height);
 
